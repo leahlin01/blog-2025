@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Kyrie Xie's Blog - Hello World Printer",
+  title: 'Leah Lin - Software Frontend Engineer',
   description:
-    'Personal blog and portfolio of Kyrie Xie, a Hello World Printer',
+    'Personal blog and portfolio of Leah Lin, a Software Frontend Engineer with experience in React, TypeScript, and modern web development',
 };
 
 export default function RootLayout({

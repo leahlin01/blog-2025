@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=800, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body,
+      html {
+        font-family: 'Noto Sans SC', sans-serif;
+      }
+
+      @media print {
+        body {
+          margin: 0;
+          padding: 0;
+        }
+
+        .print-break {
+          page-break-before: always;
+        }
+
+        .print-no-break {
+          page-break-inside: avoid;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-white min-h-screen flex flex-col items-center justify-start">
+    <div
+      class="w-[210mm] max-w-full bg-white mt-4 mb-3 flex flex-col rounded-none shadow-none print:mt-0 print:mb-0"
+    >
+      <div class="px-9 py-5 flex-1 flex flex-col print:py-4">
+        <div class="flex flex-row items-baseline gap-7 mb-2">
+          <div class="text-3xl font-bold select-text">Leah</div>
+          <div class="text-lg font-medium text-gray-700 select-text">
+            前端开发工程师
+          </div>
+        </div>
+        <div class="flex gap-4 mb-2">
+          <a
+            href="mailto:leah2022@qq.com"
+            class="text-blue-600 hover:text-blue-800 text-base"
+            >leah2022@qq.com</a
+          >
+          <a
+            href="https://www.linkedin.com/in/leah-lin-bb87a31a5/"
+            target="_blank"
+            class="text-blue-600 hover:text-blue-800 text-base"
+            >LinkedIn</a
+          >
+        </div>
+
+        <div class="mb-3">
+          <div class="text-lg font-bold mb-2">技能特长</div>
+          <div class="text-gray-700 font-light mt-2 text-sm">
+            <strong class="font-normal">框架：</strong>Javascript, HTML, CSS, React, TypeScript, Next.js, Vue.js, React
+            Native, Taro, TailwindCSS, Node.js, Ant Design, Prisma<br />
+            <strong class="font-normal">工具：</strong> Git, Webpack,
+            Jest, Jenkins<br />
+            <strong class="font-normal">熟练使用Cursor、Claude等AI工具，显著提升开发效率和代码质量
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <div class="text-lg font-bold mb-2">工作经验</div>
+          <div class="flex flex-col gap-4">
+              <div class=" pb-1 flex-1 justify-between relative">
+                  <div class="text-base font-bold select-text">
+                  高级前端开发工程师
+                </div>
+                <div class="text-sm text-gray-600 mt-1 select-text">
+                  •
+                  主导移动端和Web端核心功能开发，服务6000+餐厅，处理100m+日订单<br />
+                  •
+                  与16+开发者、8+产品经理、2+UI设计师协作，交付像素级精准设计
+                </div>
+
+                <div class="absolute right-0 top-0 text-right font-medium">
+                  
+                  <div class="select-text"
+                    ><a
+                      href="https://www.tasiting.com/"
+                      target="_blank"
+                      class="text-blue-600 hover:text-blue-800"
+                      >塔斯汀餐饮管理有限公司</a
+                    ></div>
+                  <span class="select-text">2022.06 - 至今</span>
+                </div>
+                </div>
+                
+               
+
+              <div class="ml-4">
+              <div class="flex flex-col gap-4">
+                <div class="flex">
+                  <div class=" pb-1 flex-1">
+                    <div class="text-base font-bold select-text">
+                      塔斯汀点餐小程序（10m+用户）
+                      
+                    </div>
+                    <div class="text-sm text-gray-600 mt-1 select-text">
+                      技术栈：Taro、TypeScript、Zustand
+                    </div>
+                    <div class="text-sm text-gray-600 mt-1 select-text">
+                      •
+                      优化webpack配置loaderOptions，集成图片CDN，减少30%资源加载时间<br />
+                      •
+                      利用IntersectionObserver实现虚拟化渲染，减少70%节点渲染，FCP提升1s+<br />
+                      •
+                      利用Lottie实现动画效果，提升用户体验，有效像素级落地UI设计<br />
+                    </div>
+                  </div>
+                </div>
+              </div>
+    
+              <div class="flex flex-col gap-4">
+                <div class="flex">
+                  <div class=" pb-1 flex-1">
+                    <div class="text-base font-bold select-text">
+                      <a
+                        href="https://tastien.tastientech.com/"
+                        target="_blank"
+                        class="text-blue-600 hover:text-blue-800"
+                        >餐厅管理系统（响应式Web应用）</a
+                      >
+                    </div>
+                    <div class="text-sm text-gray-600 mt-1 select-text">
+                      技术栈：React、TypeScript、Ant Design、React Query
+                    </div>
+                    <div class="text-sm text-gray-600 mt-1 select-text">
+                      • 使用dnd-kit实现复杂拖拽排序功能，管理6000+餐厅的物流运单<br />
+                      • 使用Module Federation技术开发了共享的React组件库，
+                      使多个微前端应用能够共享通用UI组件<br />
+                      • 利用WebSocket技术实现订单实时通知更新
+                    </div>
+                  </div>
+                </div>
+              </div>
+    
+              <div class="flex flex-col gap-4">
+                <div class="flex">
+                  <div class=" pb-1 flex-1">
+                    <div class="text-base font-bold select-text">
+                      <a
+                        href="https://apps.apple.com/cn/app/%E5%A1%94%E5%A1%94%E9%97%A8%E5%BA%97%E5%8A%A9%E6%89%8B/id1631486031?l=en-GB"
+                        target="_blank"
+                        class="text-blue-600 hover:text-blue-800"
+                        >餐厅员工APP（跨平台应用）</a
+                      >
+                    </div>
+                    <div class="text-sm text-gray-600 mt-1 select-text">
+                      技术栈：React Native、TypeScript、Electron
+                    </div>
+                    <div class="text-sm text-gray-600 mt-1 select-text">
+                      •
+                      采用monorepo架构，实现app端和POS端一套代码，减少开发时间并确保跨平台一致性<br />
+                      •
+                      通过打补丁修复第三方库react-native-apk-install在RN0.64版本中的兼容性问题
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+          </div>
+        
+        <div class="mb-3">
+          <div class="text-lg font-bold mb-2">项目经验</div>
+          
+
+          <div class="flex flex-col gap-4">
+            <div class="flex">
+              <div class=" pb-1 flex-1">
+                <div class="text-base font-bold select-text">
+                  <a
+                    href="https://application-tracking-omega.vercel.app/"
+                    target="_blank"
+                    class="text-blue-600 hover:text-blue-800"
+                    >大学申请管理系统（个人项目）</a
+                  >
+                </div>
+                <div class="text-sm text-gray-600 mt-1 select-text">
+                  技术栈：Next.js、TypeScript、Prisma、JWT、Tailwind CSS
+                </div>
+                <div class="text-sm text-gray-600 mt-1 select-text">
+                  • 采用Next.js 13+ App
+                  Router架构，实现服务端渲染SSR和客户端渲染CSR<br />
+                  • 使用Prisma
+                  ORM构建数据库模型，实现用户、角色、申请等核心业务实体<br />
+                  •
+                  集成JWT身份认证和基于角色的访问控制（RBAC），支持多级权限管理<br />
+                  • 实现响应式设计，支持PC端和移动端，提供良好的用户体验
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mb-3 print-no-break">
+          <div class="text-lg font-bold mb-2">教育背景</div>
+          <div class="flex flex-col gap-4">
+            <div class="flex">
+              <div class=" pb-1 flex-1">
+                <div class="flex justify-between text-base font-medium">
+                  <span class="select-text">2018.09 - 2022.06</span>
+                  <span class="select-text">福建师范大学</span>
+                </div>
+                <div class="flex items-baseline"> <div class="text-base font-bold mt-1 select-text">
+                  英语（本科）
+                </div>
+                <div class="text-sm text-gray-600 mt-1 select-text">
+                  GPA: 3.54/4.0
+                </div></div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
