@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import AboutContent from './web/AboutContent';
+import AboutContent from './AboutContent';
 import ResumeContent from './ResumeContent';
 import ProjectContent from './ProjectContent';
 import SearchContent from './SearchContent';
@@ -29,15 +29,20 @@ export default function DesktopContent() {
       {/* 顶部导航栏 */}
       <header className='flex items-center justify-between px-8 py-4 border-b border-gray-100'>
         <div className='flex items-center gap-4'>
-          <span className='text-gray-600'>Home</span>
-          <button className='p-2 hover:bg-gray-100 rounded-full transition-colors'>
+          <button
+            className='text-gray-600'
+            onClick={() => setCurrentRoute('about')}
+          >
+            Home
+          </button>
+          {/* <button className='p-2 hover:bg-gray-100 rounded-full transition-colors'>
             🌙
           </button>
           <span className='text-gray-400'>|</span>
           <div className='flex items-center gap-2'>
             <span className='text-gray-600'>中文</span>
             <span className='text-sm'>🇨🇳</span>
-          </div>
+          </div> */}
         </div>
 
         <nav className='flex items-center gap-6'>

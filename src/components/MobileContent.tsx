@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import AboutContent from './mobile/AboutContent';
+import AboutContent from './AboutContent';
 import ResumeContent from './ResumeContent';
 import ProjectContent from './ProjectContent';
 import SearchContent from './SearchContent';
@@ -30,15 +30,20 @@ export default function MobileContent() {
       {/* 移动端顶部导航栏 */}
       <header className='flex items-center justify-between px-4 py-3 border-b border-gray-100'>
         <div className='flex items-center gap-3'>
-          <span className='text-sm text-gray-600'>Home</span>
-          <button className='p-1.5 hover:bg-gray-100 rounded-full transition-colors'>
+          <span
+            className='text-sm text-gray-600'
+            onClick={() => setCurrentRoute('about')}
+          >
+            Home
+          </span>
+          {/* <button className='p-1.5 hover:bg-gray-100 rounded-full transition-colors'>
             🌙
           </button>
           <span className='text-gray-400'>|</span>
           <div className='flex items-center gap-1'>
             <span className='text-sm text-gray-600'>中文</span>
             <span className='text-xs'>🇨🇳</span>
-          </div>
+          </div> */}
         </div>
 
         {/* 移动端汉堡菜单 */}
