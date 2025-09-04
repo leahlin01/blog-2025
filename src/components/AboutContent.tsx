@@ -46,11 +46,11 @@ export default function AboutContent() {
             {/* 个人简介 */}
             <div className='max-w-2xl mx-auto'>
               <p className='text-gray-700 leading-relaxed text-base'>
-                Hi, Thanks for visiting my portfolio! I'm a Frontend Developer
-                with 3+ years of experience building scalable web applications.
-                Passionate about creating intuitive user experiences and writing
-                clean, maintainable code. Experienced in React, TypeScript, and
-                modern web technologies.
+                Hi, Thanks for visiting my portfolio! I&apos;m a Frontend
+                Developer with 4 years of experience building scalable web
+                applications. Passionate about creating intuitive user
+                experiences and writing clean, maintainable code. Experienced in
+                React, TypeScript, and modern web technologies.
               </p>
             </div>
           </div>
