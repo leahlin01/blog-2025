@@ -58,7 +58,7 @@ export default function AboutContent() {
           {/* 社交链接 */}
           <div className='flex items-center gap-4 mb-6'>
             <a
-              href='https://github.com/leahlin912'
+              href='https://github.com/leahlin01'
               target='_blank'
               rel='noopener noreferrer'
               className='w-12 h-12 bg-gradient-to-br from-gray-100 to-gray-200 rounded-full flex items-center justify-center hover:from-gray-200 hover:to-gray-300 transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-110'
@@ -66,7 +66,7 @@ export default function AboutContent() {
               <span className='text-gray-600 text-lg'>🐱</span>
             </a>
             <a
-              href='https://linkedin.com/in/leahlin912'
+              href='https://www.linkedin.com/in/leah-lin-bb87a31a5/'
               target='_blank'
               rel='noopener noreferrer'
               className='w-12 h-12 bg-gradient-to-br from-gray-100 to-gray-200 rounded-full flex items-center justify-center hover:from-gray-200 hover:to-gray-300 transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-110'
