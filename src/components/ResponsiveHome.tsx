@@ -4,7 +4,6 @@ import { useState } from 'react';
 import AboutContent from './AboutContent';
 import ResumeContent from './ResumeContent';
 import ProjectContent from './ProjectContent';
-import SearchContent from './SearchContent';
 
 export default function ResponsiveContent() {
   const [currentRoute, setCurrentRoute] = useState('about');
@@ -18,8 +17,6 @@ export default function ResponsiveContent() {
         return <ResumeContent />;
       case 'project':
         return <ProjectContent />;
-      case 'search':
-        return <SearchContent />;
       default:
         return <AboutContent />;
     }
@@ -136,19 +133,6 @@ export default function ResponsiveContent() {
             >
               Resume
             </button>
-            <button
-              onClick={() => {
-                setCurrentRoute('search');
-                setIsMenuOpen(false);
-              }}
-              className={`px-4 py-3 text-left transition-colors ${
-                currentRoute === 'search'
-                  ? 'bg-gray-100 text-gray-900'
-                  : 'text-gray-600 hover:bg-gray-50'
-              }`}
-            >
-              Search
-            </button>
           </nav>
         </div>
       )}
@@ -160,9 +144,7 @@ export default function ResponsiveContent() {
 
       {/* 底部 */}
       <footer className='text-center py-6 md:py-8 text-gray-500 border-t border-gray-100'>
-        <p className='text-xs md:text-sm'>
-          © 2025 Leah Lin&apos;s Blog Visitors: 4798
-        </p>
+        <p className='text-xs md:text-sm'>© 2025 Leah Lin&apos;s Blog</p>
       </footer>
     </div>
   );

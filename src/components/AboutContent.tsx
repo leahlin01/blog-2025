@@ -1,12 +1,22 @@
+'use client';
 import Image from 'next/image';
-import miniappImg from '@/assets/miniappImg.png';
-import staffAppImg from '@/assets/staffAppImg.png';
-import smartStoreImg from '@/assets/smartStoreImg.png';
-import applicationTrackingImg from '@/assets/applicationTrackingImg.png';
-import adhdReader from '@/assets/adhdReader.png';
 import { cdn } from '@/lib/cdn';
+import { useState } from 'react';
+import { projects } from '@/store/project';
 
+type Project = {
+  title: string;
+  description: string;
+  image: string;
+  techStack: string[];
+  demoUrl: string;
+  githubUrl: string;
+  content?: React.ReactNode;
+};
 export default function AboutContent() {
+  const [selectedProject, setSelectedProject] = useState<Project>();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <div className='font-sans bg-white'>
       {/* 主要内容区域 */}
@@ -19,14 +29,18 @@ export default function AboutContent() {
             <div className='w-36 h-36 bg-gradient-to-br from-gray-100 to-gray-200 rounded-full flex items-center justify-center border-4 border-gray-300 shadow-lg group cursor-pointer'>
               <div className='text-5xl group-hover:hidden'>😐</div>
               <div className='text-5xl hidden group-hover:block'>😊</div>
-            </div>
 
-            {/* 对话气泡 */}
-            <div className='absolute -top-10 -right-6 bg-white border border-gray-200 rounded-xl px-4 py-2 shadow-lg'>
-              <span className='text-sm text-gray-700 font-medium'>
-                ok, fine
-              </span>
-              <div className='absolute -bottom-1 right-5 w-3 h-3 bg-white border-b border-r border-gray-200 transform rotate-45'></div>
+              {/* 对话气泡 */}
+              <div className='absolute -top-10 -right-6 bg-white border border-gray-200 rounded-xl px-4 py-2 shadow-lg'>
+                <div className='text-sm text-gray-700 font-medium group-hover:hidden '>
+                  ok, fine
+                </div>
+                <div className='text-sm text-gray-700 font-medium hidden group-hover:block '>
+                  Let&apos;s connect
+                </div>
+
+                <div className='absolute -bottom-1 right-5 w-3 h-3 bg-white border-b border-r border-gray-200 transform rotate-45'></div>
+              </div>
             </div>
 
             {/* 手指图标 */}
@@ -58,29 +72,26 @@ export default function AboutContent() {
 
           {/* 社交链接 */}
           <div className='flex items-center gap-4 mb-6'>
-            <a
-              href='https://github.com/leahlin01'
-              target='_blank'
-              rel='noopener noreferrer'
-              className='w-12 h-12 bg-gradient-to-br from-gray-100 to-gray-200 rounded-full flex items-center justify-center hover:from-gray-200 hover:to-gray-300 transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-110'
-            >
-              <span className='text-gray-600 text-lg'>🐱</span>
-            </a>
-            <a
-              href='https://www.linkedin.com/in/leah-lin-bb87a31a5/'
-              target='_blank'
-              rel='noopener noreferrer'
-              className='w-12 h-12 bg-gradient-to-br from-gray-100 to-gray-200 rounded-full flex items-center justify-center hover:from-gray-200 hover:to-gray-300 transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-110'
-            >
-              <span className='text-gray-600 text-lg'>💼</span>
-            </a>
-
-            <a
-              href='mailto:leahlin2022@qq.com'
-              className='w-12 h-12 bg-gradient-to-br from-gray-100 to-gray-200 rounded-full flex items-center justify-center hover:from-gray-200 hover:to-gray-300 transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-110'
-            >
-              <span className='text-gray-600 text-lg'>✉️</span>
-            </a>
+            {[
+              { href: 'https://github.com/leahlin01', label: 'Github' },
+              {
+                href: 'https://www.linkedin.com/in/leah-lin-bb87a31a5/',
+                label: 'LinkedIn',
+              },
+              { href: 'mailto:leahlin2022@qq.com', label: 'Email' },
+            ].map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                target='_blank'
+                rel='noopener noreferrer'
+                className='w-fit h-fit rounded-sm p-1 bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center hover:from-gray-200 hover:to-gray-300 transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-110'
+              >
+                <span className='text-gray-600 text-sm md:text-base'>
+                  {link.label}
+                </span>
+              </a>
+            ))}
           </div>
         </div>
       </header>
@@ -217,84 +228,7 @@ export default function AboutContent() {
           </h3>
 
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
-            {[
-              {
-                title: 'Restaurant Management System',
-                description:
-                  'Responsive web application serving 6792+ restaurants and processing 100m+ daily orders',
-                image: cdn('/images/smartStoreImg.png'),
-                techStack: [
-                  'React',
-                  'Ant Design',
-                  'React-Query',
-                  'TailwindCSS',
-                  'Module Federation',
-                  'dnd-kit',
-                ],
-                demoUrl: 'https://tastien.tastientech.com/',
-                githubUrl: '',
-              },
-              {
-                title: 'Tastien Food Ordering WeChat MiniApp',
-                description:
-                  'WeChat mini-app with 10m+ users, featuring virtual scroll and Lottie animations',
-                image: cdn('/images/miniappImg.png'),
-                techStack: [
-                  'React',
-                  'Zustand',
-                  'TypeScript',
-                  'Taro',
-                  'Webpack',
-                ],
-                demoUrl: '',
-                githubUrl: '',
-              },
-              {
-                title: 'Restaurant Staff App',
-                description:
-                  'Cross-platform app for restaurant staff with unified codebase using monorepo structure',
-                image: cdn('/images/staffAppImg.png'),
-                techStack: [
-                  'React Native',
-                  'React-Query',
-                  'Electron',
-                  'Monorepo',
-                ],
-                demoUrl:
-                  'https://apps.apple.com/cn/app/%E5%A1%94%E5%A1%94%E9%97%A8%E5%BA%97%E5%8A%A9%E6%89%8B/id1631486031?l=en-GB',
-                githubUrl: '',
-              },
-              {
-                title: 'Application Tracking System',
-                description:
-                  'Web application helping college students track application progress with secure authentication',
-                image: cdn('/images/applicationTrackingImg.png'),
-                techStack: [
-                  'Next.js',
-                  'Prisma',
-                  'PostgreSQL',
-                  'Vercel',
-                  'JWT',
-                  'bcrypt',
-                ],
-                demoUrl: 'https://application-tracking-omega.vercel.app/',
-                githubUrl: 'https://github.com/leahlin01/application-tracking',
-              },
-              {
-                title: 'ADHD Reader',
-                description:
-                  'Flutter App tailored for adhd users to read books with bionic reading mode',
-                image: cdn('/images/adhdReader.png'),
-                techStack: [
-                  'Flutter',
-                  'epubx',
-                  'path_provider',
-                  'shared_preferences',
-                ],
-                demoUrl: '',
-                githubUrl: 'https://github.com/leahlin01/adhd_reader',
-              },
-            ].map((project, index) => (
+            {projects.map((project, index) => (
               <div
                 key={index}
                 className='bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group border border-gray-100'
@@ -303,7 +237,7 @@ export default function AboutContent() {
                 <div className='relative overflow-hidden'>
                   {project.image ? (
                     <Image
-                      src={project.image}
+                      src={cdn(project.image)}
                       alt={project.title}
                       width={450}
                       height={300}
@@ -322,6 +256,15 @@ export default function AboutContent() {
 
                   {/* Overlay with action buttons */}
                   <div className='absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-80'>
+                    <button
+                      onClick={() => {
+                        setSelectedProject(project);
+                        setIsModalOpen(true);
+                      }}
+                      className='px-4 py-2 bg-purple-600 text-white rounded-lg font-medium hover:bg-purple-500 transition-colors duration-200 transform translate-y-4 group-hover:translate-y-0'
+                    >
+                      Details
+                    </button>
                     {project.demoUrl && (
                       <a
                         href={project.demoUrl}
@@ -374,6 +317,76 @@ export default function AboutContent() {
           </div> */}
         </div>
       </section>
+
+      {/* Modal */}
+      {isModalOpen && selectedProject && (
+        <div className='fixed inset-0 z-50'>
+          <div
+            className='absolute inset-0 bg-black bg-opacity-50'
+            onClick={() => setIsModalOpen(false)}
+          />
+          <div className='absolute inset-0 flex items-center justify-center p-4'>
+            <div className='w-full max-w-2xl bg-white rounded-2xl shadow-2xl border border-gray-100'>
+              <div className='flex items-start justify-between p-6 pb-4'>
+                <div>
+                  <h3 className='text-2xl font-semibold text-gray-900'>
+                    {selectedProject.title}
+                  </h3>
+                  <p className='text-gray-600 mt-1'>
+                    {selectedProject.description}
+                  </p>
+                </div>
+                <button
+                  className='ml-4 text-gray-400 hover:text-gray-600 transition-colors'
+                  onClick={() => setIsModalOpen(false)}
+                  aria-label='Close'
+                >
+                  ✕
+                </button>
+              </div>
+              <div className='px-6 pb-2'>
+                <div className='flex flex-wrap gap-2 mb-4'>
+                  {selectedProject.techStack?.map((t: string, i: number) => (
+                    <span
+                      key={i}
+                      className='px-2.5 py-1 bg-gray-100 text-gray-700 text-xs rounded-full'
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+                <div className='whitespace-pre-line text-gray-700 text-sm leading-6'>
+                  {selectedProject?.content}
+                </div>
+              </div>
+              <div className='p-6 pt-4 flex gap-3 justify-end'>
+                {selectedProject.demoUrl && (
+                  <a
+                    href={selectedProject.demoUrl}
+                    className='px-4 py-2 rounded-lg bg-gray-900 text-white hover:bg-gray-800 transition-colors'
+                  >
+                    Live Demo
+                  </a>
+                )}
+                {selectedProject.githubUrl && (
+                  <a
+                    href={selectedProject.githubUrl}
+                    className='px-4 py-2 rounded-lg bg-gray-100 text-gray-800 hover:bg-gray-200 transition-colors'
+                  >
+                    GitHub
+                  </a>
+                )}
+                <button
+                  onClick={() => setIsModalOpen(false)}
+                  className='px-4 py-2 rounded-lg bg-white border border-gray-200 text-gray-700 hover:bg-gray-50 transition-colors'
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
