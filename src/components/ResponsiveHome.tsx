@@ -67,16 +67,6 @@ export default function ResponsiveContent() {
           >
             Resume
           </button>
-          <button
-            onClick={() => setCurrentRoute('search')}
-            className={`transition-colors ${
-              currentRoute === 'search'
-                ? 'text-gray-900 font-medium'
-                : 'text-gray-600 hover:text-gray-900'
-            }`}
-          >
-            Search
-          </button>
         </nav>
 
         {/* 移动端汉堡 */}
