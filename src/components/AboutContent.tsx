@@ -4,6 +4,7 @@ import staffAppImg from '@/assets/staffAppImg.png';
 import smartStoreImg from '@/assets/smartStoreImg.png';
 import applicationTrackingImg from '@/assets/applicationTrackingImg.png';
 import adhdReader from '@/assets/adhdReader.png';
+import { cdn } from '@/lib/cdn';
 
 export default function AboutContent() {
   return (
@@ -74,12 +75,6 @@ export default function AboutContent() {
               <span className='text-gray-600 text-lg'>💼</span>
             </a>
 
-            {/* <a
-              href='#'
-              className='w-12 h-12 bg-gradient-to-br from-gray-100 to-gray-200 rounded-full flex items-center justify-center hover:from-gray-200 hover:to-gray-300 transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-110'
-            >
-              <span className='text-gray-600 text-lg'>⚡</span>
-            </a> */}
             <a
               href='mailto:leahlin2022@qq.com'
               className='w-12 h-12 bg-gradient-to-br from-gray-100 to-gray-200 rounded-full flex items-center justify-center hover:from-gray-200 hover:to-gray-300 transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-110'
@@ -227,7 +222,7 @@ export default function AboutContent() {
                 title: 'Restaurant Management System',
                 description:
                   'Responsive web application serving 6792+ restaurants and processing 100m+ daily orders',
-                image: smartStoreImg,
+                image: cdn('/images/smartStoreImg.png'),
                 techStack: [
                   'React',
                   'Ant Design',
@@ -243,7 +238,7 @@ export default function AboutContent() {
                 title: 'Tastien Food Ordering WeChat MiniApp',
                 description:
                   'WeChat mini-app with 10m+ users, featuring virtual scroll and Lottie animations',
-                image: miniappImg,
+                image: cdn('/images/miniappImg.png'),
                 techStack: [
                   'React',
                   'Zustand',
@@ -258,7 +253,7 @@ export default function AboutContent() {
                 title: 'Restaurant Staff App',
                 description:
                   'Cross-platform app for restaurant staff with unified codebase using monorepo structure',
-                image: staffAppImg,
+                image: cdn('/images/staffAppImg.png'),
                 techStack: [
                   'React Native',
                   'React-Query',
@@ -273,7 +268,7 @@ export default function AboutContent() {
                 title: 'Application Tracking System',
                 description:
                   'Web application helping college students track application progress with secure authentication',
-                image: applicationTrackingImg,
+                image: cdn('/images/applicationTrackingImg.png'),
                 techStack: [
                   'Next.js',
                   'Prisma',
@@ -289,7 +284,7 @@ export default function AboutContent() {
                 title: 'ADHD Reader',
                 description:
                   'Flutter App tailored for adhd users to read books with bionic reading mode',
-                image: adhdReader,
+                image: cdn('/images/adhdReader.png'),
                 techStack: [
                   'Flutter',
                   'epubx',
